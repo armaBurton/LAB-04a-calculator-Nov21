@@ -1,4 +1,7 @@
 // import functions
+// import {
+//     pushNumber
+// } from 'functions.js';
 
 let variableSwitcher = 0;
 let num1 = '';
@@ -185,7 +188,6 @@ document.addEventListener('keydown', (e) => {
     }
 
     e.preventDefault();
-
 });
 
 function equalsFunction(){

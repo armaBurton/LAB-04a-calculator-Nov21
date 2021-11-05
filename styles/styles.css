@@ -12,6 +12,7 @@ main {
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    margin-bottom:30px;
 }
 
 header {
@@ -35,9 +36,12 @@ h1 {
 }
 
 footer {
+    width: 100%;
     background-color: #FAF0EA;
     padding: 10px;
     border-top: 5px solid red;
+    position: fixed;
+    bottom:0;
 }
 
 .head-foot-color{
@@ -52,7 +56,7 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-template-areas: 
-        ". b c d"
+        "a b c d"
         "e f g h"
         "i j k h"
         "l m n o"
@@ -100,10 +104,15 @@ footer {
     padding: 0 10px;
     font-size: 2rem;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 #equation{
+    padding-top: 5px;
     text-align: left;
+    line-height: 2rem;
 }
 
 #answer{ 
@@ -148,6 +157,6 @@ footer {
     }
 }
 
-#result{
+/* #result{
     margin-top: 50px;
-}
+} */
