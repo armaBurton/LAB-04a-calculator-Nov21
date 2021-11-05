@@ -62,25 +62,12 @@ nine.addEventListener('click', () => {
 
 const point = document.getElementById(`point`);
 point.addEventListener('click', () => {
-    if (variableSwitcher === 0 && !num1.includes('.')){
-        num1 += '.';
-        displayCalc();
-    } else if (variableSwitcher === 1 && !num2.includes('.')){
-        num2 += '.';
-        displayCalc();
-    }       
+    addPoint();     
 });
 
 const clear = document.getElementById(`clear`);
 clear.addEventListener('click', () => {
-
     clearAll();
-    // num1 = '';
-    // num2 = '';
-    // operand = '';
-    // result.textContent = '';
-    // displayCalc();
-    // variableSwitcher = 0;
 });
 
 const add = document.getElementById(`add`);
@@ -106,46 +93,6 @@ divide.addEventListener('click', () =>{
 const equals = document.getElementById(`equals`);
 equals.addEventListener('click', () => {
     equalsFunction();
-    // if (num1 === ''){
-    //     num1 = '0';
-    // }
-    
-    // if (num2 === ''){
-    //     num2 = 0;
-    // }
-    
-    // let num1IsNum = +num1;
-    // let num2IsNum = +num2;
-    
-    // let total = 0;
-
-    // switch (operand) {
-    //     case '+':
-    //         total = num1IsNum + num2IsNum;
-    //         calcResult(total);
-    //         displayCalc();
-    //         break;
-    //     case '-':
-    //         total = num1IsNum - num2IsNum;
-    //         calcResult(total);
-    //         displayCalc();
-    //         break;
-    //     case '*':
-    //         total = num1IsNum * num2IsNum;
-    //         calcResult(total);
-    //         displayCalc();
-    //         break;
-    //     case '/':
-    //         total = num1IsNum / num2IsNum;
-    //         calcResult(total);
-    //         displayCalc();
-    //         break;
-    //     case '':
-    //         break;
-    //     default: 
-    //         //never should default
-    //         break;
-    // }
 });
 
 function calcResult(total){
@@ -186,36 +133,55 @@ function displayCalc(){
 document.addEventListener('keydown', (e) => {
     if (e.key === '0'){
         pushNumber('0');
+        animateKeystroke(zero);
     } else if (e.key === '1'){
         pushNumber('1');
+        animateKeystroke(one);
     } else if (e.key === '2'){
         pushNumber('2');
+        animateKeystroke(two);
     } else if (e.key === '3'){
         pushNumber('3');
+        animateKeystroke(three);
     } else if (e.key === '4'){
         pushNumber('4');
+        animateKeystroke(four);
     } else if (e.key === '5'){
         pushNumber('5');
+        animateKeystroke(five);
     } else if (e.key === '6'){
         pushNumber('6');
+        animateKeystroke(six);
     } else if (e.key === '7'){
         pushNumber('7');
+        animateKeystroke(seven);
     } else if (e.key === '8'){
         pushNumber('8');
+        animateKeystroke(eight);
     } else if (e.key === '9'){
         pushNumber('9');
+        animateKeystroke(nine);
+    } else if (e.key === '.'){
+        addPoint();
+        animateKeystroke(point);
     } else if (e.key === '+'){
         operate('+');
+        animateKeystroke(add);
     } else if (e.key === '-'){
         operate('-');
+        animateKeystroke(subtract);
     } else if (e.key === '*'){
         operate('*');
+        animateKeystroke(multiply);
     } else if (e.key === '/'){
         operate('/');
+        animateKeystroke(divide);
     } else if (e.key === 'Enter'){
         equalsFunction();
+        animateKeystroke(equals);
     } else if (e.key === 'Backspace'){
         clearAll();
+        animateKeystroke(clear);
     }
 
     e.preventDefault();
@@ -272,4 +238,21 @@ function clearAll(){
     result.textContent = '';
     displayCalc();
     variableSwitcher = 0;
+}
+
+function addPoint() {
+    if (variableSwitcher === 0 && !num1.includes('.')){
+        num1 += '.';
+        displayCalc();
+    } else if (variableSwitcher === 1 && !num2.includes('.')){
+        num2 += '.';
+        displayCalc();
+    }  
+}
+
+function animateKeystroke(key){
+    key.classList.add('key-press');
+    setTimeout(() => {
+        key.classList.remove('key-press')
+    }, 351);
 }
