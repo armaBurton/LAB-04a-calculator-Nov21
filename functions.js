@@ -22,4 +22,4 @@ export {
     subNumbers,
     multiplyNumbers,
     divideNumbers
-}
+};
