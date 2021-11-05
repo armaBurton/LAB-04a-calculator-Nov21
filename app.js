@@ -1,7 +1,10 @@
 // import functions
-// import {
-//     pushNumber
-// } from 'functions.js';
+import {
+    addNumbers,
+    subNumbers,
+    multiplyNumbers,
+    divideNumbers
+} from './functions.js';
 
 let variableSwitcher = 0;
 let num1 = '';
@@ -206,22 +209,22 @@ function equalsFunction(){
 
     switch (operand) {
         case '+':
-            total = num1IsNum + num2IsNum;
+            total = addNumbers(num1IsNum, num2IsNum);
             calcResult(total);
             displayCalc();
             break;
         case '-':
-            total = num1IsNum - num2IsNum;
+            total = subNumbers(num1IsNum, num2IsNum);
             calcResult(total);
             displayCalc();
             break;
         case '*':
-            total = num1IsNum * num2IsNum;
+            total = multiplyNumbers(num1IsNum, num2IsNum);
             calcResult(total);
             displayCalc();
             break;
         case '/':
-            total = num1IsNum / num2IsNum;
+            total = divideNumbers(num1IsNum, num2IsNum);
             calcResult(total);
             displayCalc();
             break;
@@ -255,6 +258,6 @@ function addPoint() {
 function animateKeystroke(key){
     key.classList.add('key-press');
     setTimeout(() => {
-        key.classList.remove('key-press')
+        key.classList.remove('key-press');
     }, 351);
 }

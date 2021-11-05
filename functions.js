@@ -1,15 +1,25 @@
 
 
-// function pushNumber(number){
-//     if (variableSwitcher === 0){
-//         num1 += number;
-//         displayCalc();
-//     } else if (variableSwitcher === 1){
-//         num2 += number;
-//         displayCalc();
-//     }
-// }
+
+function addNumbers(n1, n2){
+    return n1 + n2;
+}
+
+function subNumbers(n1, n2){
+    return n1 - n2;
+}
+
+function multiplyNumbers(n1, n2){
+    return n1 * n2;
+}
+
+function divideNumbers(n1, n2){
+    return n1 / n2;
+}
 
 export {
-    pushNumber
+    addNumbers,
+    subNumbers,
+    multiplyNumbers,
+    divideNumbers
 };
