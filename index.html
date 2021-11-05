@@ -8,22 +8,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/styles.css">
-    <title>My App</title>
+    <title>Calculator</title>
 </head>
 
 <body>
-    <header>
+    <header class="head-foot-color">
         <h1>My App</h1>
         <img src="assets/big-logo.png" />
     </header>
     
     <main>
-
-        Make a Web App!
+        <div id="calculate">
+            <div id="equation">
+                <span id="number1"></span>
+                <span id="operator"></span>
+                <span id="number2"></span><span id="blinking-cursor">_</span>
+            </div>
+            <div id="result"></div>
+        </div>
+        <section class="calculator">
+            <div class="cube a" id="clear">C</div>
+            <div class="cube b" id="divide">/</div>
+            <div class="cube c" id="multiply">*</div>
+            <div class="cube d" id="subtract">-</div>
+            <div class="cube e" id="seven">7</div>
+            <div class="cube f" id="eight">8</div>
+            <div class="cube g" id="nine">9</div>
+            <div class="cube h" id="add">+</div>
+            <div class="cube i" id="four">4</div>
+            <div class="cube j" id="five">5</div>
+            <div class="cube k" id="six">6</div>
+            <div class="cube l" id="one">1</div>
+            <div class="cube m" id="two">2</div>
+            <div class="cube n" id="three">3</div>
+            <div class="cube o" id="equals">=</div>
+            <div class="cube p" id="zero">0</div>
+            <div class="cube q" id="point">.</div>
+        </section>
         
     </main>
 
-    <footer>
+    <footer class="head-foot-color">
         &copy; 2021 Alchemy Code Lab
     </footer>
 
